@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
+    <title>Register</title>
+</head>
+<body class="bg-slate-50">
+    <header class="border-b-2 border-white bg-picton-blue">
+        <h1 class="text-5xl text-center text-white font-bold p-5">Users Manager App</h1>
+    </header>
+    <div class="register p-4">
+        <form class="" action="" method="post" class="register-form">
+            <div class="flex flex-col justify-center inputs w-fit m-auto mt-16 space-y-5">
+                <h1 class="text-4xl text-center mt-8">Inscription</h1>
+                <div class="email">
+                    <label for="email">Email</label>
+                    <input class="w-full h-10 px-10 py-3 shadow-md outline-none bg-transparent" id="email" name="email" type="email" placeholder="Email..." 
+                    <% if (locals.email) { %>
+                        value="<%= email %>"
+                    <% } %>>
+                </div>
+                <div class="password">
+                    <label for="password">Mot de passe</label>
+                    <input class="w-full h-10 px-10 py-3 shadow-md outline-none bg-transparent" id="password" name="password" type="password" placeholder="Mot de passe...">
+                </div>
+                <div class="password-confirm">
+                    <label for="password-confirm">Confirmation</label>
+                    <input class="w-full h-10 px-10 py-3 shadow-md outline-none bg-transparent" id="password-confirm" name="passwordConfirm" type="password" placeholder="Confirmer le mot de passe...">
+                </div>
+                <p class="text-center">Déjà un compte ? <a href="/login" class="text-picton-blue hover:underline underline-offset-2">Se connecter</a></p>
+                <% if (locals.errorMessage) { %>
+                    <div class="error text-red-500 text-center">
+                        <%= errorMessage %>
+                    </div>
+                <% } %>
+                <button class="bg-picton-blue text-lg text-white hover:bg-white hover:text-picton-blue text-center rounded-lg px-4 py-2 shadow-md transition-all duration-200 ease-in-out">S'inscrire</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
